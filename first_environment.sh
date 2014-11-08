@@ -35,3 +35,6 @@ if [ ! -d $HOME/base ];then;
   mkdir $HOME/base
   cd $HOME/base;git clone git@github.com:esehara/ImmutableDevelopEnvironment.git
 fi
+
+# Japanese Directory Rename
+LANG=C xdg-user-dirs-gtk-update
