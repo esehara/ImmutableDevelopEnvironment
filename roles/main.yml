@@ -30,5 +30,5 @@
            dest={{HOME}}/.rbenv/plugins/ruby-build
 
     # template generate
-    # - name: template generate for .bashrc
-    #   tempalte: 
+    - name: template generate for .bashrc
+      template: src=templates/.bashrc.jinja2 dest={{HOME}}/.bashrc
