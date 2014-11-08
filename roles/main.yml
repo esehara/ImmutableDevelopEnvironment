@@ -15,20 +15,18 @@
       sudo: yes
       with_items:
         - byobu
-
-    # [TODO] gmate install
-
-    - name: gmate clone
-      git: name=git://github.com/gmate/gmate.git dest={{ARCHIVE}}/gmate
-
+        - i3
 
     # [TODO] emacs24 settings
     - name: emacs24 install
       apt: name=emacs24
       sudo: yes
 
-    # [TODO] atom install
+    - name: generate .emacs.d/init.el
+      template: src=templates/emacs24/init.el 
+                dest={{HOME}}/.emacs.d/init.el
 
+    # [TODO] atom install
     # .rbenv settings
     - name: apt get install for .rbenv dependencies
       apt: name={{item}}
