@@ -5,3 +5,5 @@
 (add-to-list 'package-archives
   '("marmalede" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
+
+{% include "auto-install.el" %}
