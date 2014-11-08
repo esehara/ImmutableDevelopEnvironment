@@ -17,7 +17,7 @@
         - byobu
         - i3
 
-    # [TODO] emacs24 settings
+    # emacs24 settings
     - name: emacs24 install
       apt: name=emacs24
       sudo: yes
