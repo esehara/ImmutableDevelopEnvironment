@@ -1,0 +1,35 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    HOME: "{{lookup('env', 'HOME')}}" 
+  tasks:
+
+    # .rbenv settings
+
+    - name: apt get install for .rbenv dependencies
+      apt: name={{item}}
+      sudo: true
+      with_items:
+        - zlib1g-dev
+        - build-essential
+        - libssl-dev
+        - libreadline-dev
+        - libyaml-dev
+        - libsqlite3-dev
+        - sqlite3
+        - libxml2-dev
+        - libxslt1-dev
+        - libcurl4-openssl-dev
+
+    - name: git clone for .rbenv
+      git: name=git://github.com/sstephenson/rbenv.git
+           dest={{HOME}}/.rbenv
+
+    - name: git clone for ruby-build
+      git: name=git://github.com/sstephenson/ruby-build.git
+           dest={{HOME}}/.rbenv/plugins/ruby-build
+
+    # template generate
+    # - name: template generate for .bashrc
+    #   tempalte: 
