@@ -73,3 +73,5 @@
     # template generate
     - name: template generate for .bashrc
       template: src=templates/.bashrc.jinja2 dest={{HOME}}/.bashrc
+
+    # [TODO] MySQL Install
