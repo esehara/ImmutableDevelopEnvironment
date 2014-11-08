@@ -17,7 +17,7 @@
         - byobu
         - i3
 
-    # install Ricky Font
+    # install Ricty Font
     - name: generate .fonts
       file: path={{HOME}}/.fonts state=directory
 
@@ -27,11 +27,11 @@
 
     - name: get Inconsolata.otf
       get_url: url=http://levien.com/type/myfonts/Inconsolata.otf
-               dest={{HOME}}/.font/
+               dest={{HOME}}/.fonts/
 
     - name: clone repository for Ricky
       git: repo=https://github.com/yascentur/Ricty.git
-           dest={{ARCHIVE}}/ricky
+           dest={{HOME}}/.fonts/ricty
 
     # Sorry, Completely not generate Ricky
     # You need access and get => http://mix-mplus-ipa.sourceforge.jp/migu/
