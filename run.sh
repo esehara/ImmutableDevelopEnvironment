@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ansible-playbook roles/main.yml -i ansible_hosts
+ansible-playbook roles/main.yml -i ansible_hosts -K
