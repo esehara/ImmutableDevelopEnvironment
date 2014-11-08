@@ -13,9 +13,6 @@
     yaml-mode
     windmove))
 
-(defvar default-set-mode
-  '(evil-mode))
-
 (let
   ((not-installed (loop for x in installing-package-list
     when (not (package-installed-p x)) collect x)))
@@ -27,5 +24,6 @@
   (lambda (x) (require (quote x)))
   installing-package-list)
 
-
-(mapc (lambda (x) (x t)) default-set-mode)
+(load-theme 'solarized-dark t)
+(evil-mode t)
+(windmove-default-keybindings 'meta)
