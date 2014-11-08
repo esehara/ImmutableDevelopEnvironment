@@ -3,8 +3,32 @@
   connection: local
   vars:
     HOME: "{{lookup('env', 'HOME')}}"
+    ARCHIVE: "{{HOME}}/Archive"
 
   tasks:
+
+    - name: base directory
+      file: path={{HOME}}/Archive/ state=directory
+
+    - name: base application
+      apt: name={{item}}
+      sudo: yes
+      with_items:
+        - byobu
+
+    # [TODO] gmate install
+
+    - name: gmate clone
+      git: name=git://github.com/gmate/gmate.git dest={{ARCHIVE}}/gmate
+
+
+    # [TODO] emacs24 settings
+    - name: emacs24 install
+      apt: name=emacs24
+      sudo: yes
+
+    # [TODO] atom install
+
     # .rbenv settings
     - name: apt get install for .rbenv dependencies
       apt: name={{item}}
