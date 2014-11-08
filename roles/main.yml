@@ -2,11 +2,10 @@
 - hosts: localhost
   connection: local
   vars:
-    HOME: "{{lookup('env', 'HOME')}}" 
+    HOME: "{{lookup('env', 'HOME')}}"
+
   tasks:
-
     # .rbenv settings
-
     - name: apt get install for .rbenv dependencies
       apt: name={{item}}
       sudo: true
