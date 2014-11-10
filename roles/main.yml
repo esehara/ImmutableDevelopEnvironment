@@ -40,7 +40,7 @@
     - name: emacs24 install
       apt: name=emacs24
       sudo: yes
-
+ 
     - name: generate .emacs.d/init.el
       template: src=templates/emacs24/init.el 
                 dest={{HOME}}/.emacs.d/init.el
@@ -74,4 +74,21 @@
     - name: template generate for .bashrc
       template: src=templates/.bashrc.jinja2 dest={{HOME}}/.bashrc
 
-    # [TODO] MySQL Install
+    # [TODO] MySQL setup
+    - name: mysql install
+      apt: name={{item}} state=present
+      sudo: true
+      with_items:
+        - mysql-client
+        - mysql-server
+
+    - name: mysql is running and enable
+      service: name=mysql state=started enabled=yes
+    
+    # postgreSQL setup
+    - name: postgresql install
+      apt: name=postgresql state=present
+      sudo: true
+    
+    - name: postgresql is running and enable
+      service: name=postgresql state=started enabled=yes
