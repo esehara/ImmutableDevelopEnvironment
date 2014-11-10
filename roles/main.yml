@@ -4,6 +4,7 @@
   vars:
     HOME: "{{lookup('env', 'HOME')}}"
     ARCHIVE: "{{HOME}}/Archive"
+    RUBY_VERSION: "2.1.4"
 
   tasks:
 
@@ -69,6 +70,16 @@
     - name: git clone for ruby-build
       git: name=git://github.com/sstephenson/ruby-build.git
            dest={{HOME}}/.rbenv/plugins/ruby-build
+    
+    - name: run rbenv install
+      command: rbenv install {{RUBY_VERSION}}
+      ignore_errors: yes
+      
+    - name: rbenv global setting
+      command: rbenv global {{RUBY_VERSION}}
+
+    - name: gem install
+      gem: name=bundle state=latest
 
     # template generate
     - name: template generate for .bashrc
