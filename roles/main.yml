@@ -4,6 +4,7 @@
   vars:
     HOME: "{{lookup('env', 'HOME')}}"
     ARCHIVE: "{{HOME}}/Archive"
+    CODE_DIR: "{{HOME}}/Code"
     RUBY_VERSION: "2.1.4"
 
   tasks:
@@ -20,6 +21,12 @@
       with_items:
         - byobu
         - i3
+
+    # Development Directory Settings
+    - name: base development directory
+      file: path={{CODE_DIR}}/{{item}} state=directory
+      with_items:
+        - Ruby
 
     # install Ricty Font
     - name: generate .fonts
