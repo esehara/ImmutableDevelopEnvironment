@@ -10,6 +10,9 @@
 
     - name: base directory
       file: path={{HOME}}/Archive/ state=directory
+      
+    - name: secret settings file touch
+      file: path={{HOME}}/.secretrc state=touch
 
     - name: base application
       apt: name={{item}}
