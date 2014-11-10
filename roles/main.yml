@@ -89,6 +89,3 @@
     - name: postgresql install
       apt: name=postgresql state=present
       sudo: true
-    
-    - name: postgresql is running and enable
-      service: name=postgresql state=started enabled=yes
