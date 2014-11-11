@@ -6,6 +6,8 @@
     auto-complete
     autopair
     evil
+    emmet-mode
+    helm
     magit
     org
     solarized-theme
@@ -27,3 +29,8 @@
 (load-theme 'solarized-dark t)
 (evil-mode t)
 (windmove-default-keybindings 'meta)
+
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'emmet-mode-hook 
+	  (lambda () (setq emmet-indentation 2)))
