@@ -110,5 +110,8 @@
     
     # postgreSQL setup
     - name: postgresql install
-      apt: name=postgresql state=present
+      apt: name={{item}} state=present
       sudo: true
+      with_items:
+        - postgresql
+        - libpq-dev
