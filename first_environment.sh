@@ -19,6 +19,7 @@ sudo pip install -y paramiko PyYAML Jinja2 httplib2
 git config --global user.email "esehara@gmail.com"
 git config --global user.name "esehara shigeo"
 git config --global core.editor 'vim -c "set fenc=utf-8"'
+git config --global push.default simple
 
 ## Ansile Install
 sudo apt-get install -y software-properties-common
