@@ -1,3 +1,6 @@
+;; Base
+{% include "base.el" %}
+
 ;; Package Mangement 
 (require 'package)
 (add-to-list 'package-archives
@@ -10,7 +13,12 @@
 {% include "auto-install.el" %}
 ;;
 
-(add-to-list 'default-frame-alias '(font . "ricky-13.5"))
 (custom-set-faces
   '(variable-pitch ((t (:family "Ricky"))))
   '(fixed-pitch ((t (:family "Ricty")))))
+
+;;
+;; Ruby Settings
+;;
+
+{% include "ruby.el" %}

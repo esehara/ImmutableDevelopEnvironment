@@ -16,7 +16,7 @@
 
 ;; server mode
 (require 'server)
-(unless (sever-running-p) (server-start))
+(unless (server-running-p) (server-start))
 
 ;; --------------------------------
 ;; change three type font function

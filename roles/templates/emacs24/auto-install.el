@@ -5,15 +5,23 @@
   '(
     auto-complete
     autopair
+    anything
     evil
     emmet-mode
     helm
+    linum
     magit
     org
     solarized-theme
     markdown-mode
     yaml-mode
-    windmove))
+    windmove
+    
+    ;; for Ruby
+    ruby-electric
+    ruby-block
+    rubocop
+    ))
 
 (let
   ((not-installed (loop for x in installing-package-list
@@ -34,3 +42,6 @@
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'emmet-mode-hook 
 	  (lambda () (setq emmet-indentation 2)))
+
+(require 'linum)
+(global-linum-mode)
