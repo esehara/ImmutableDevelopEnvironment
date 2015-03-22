@@ -6,6 +6,7 @@
     auto-complete
     autopair
     anything
+    coffee-mode
     evil
     emmet-mode
     helm
@@ -13,14 +14,28 @@
     magit
     org
     solarized-theme
+    rainbow-delimiters
     markdown-mode
     yaml-mode
+    ac-dabbrev
+    yasnippet
     windmove
-    
     ;; for Ruby
-    ruby-electric
+    ;; Not Use emacs24? -> http://blog.livedoor.jp/ooboofo3/archives/53748087.html
+    ;; ruby-electric
     ruby-block
+    ruby-end
+    rbenv
+    robe
+    flycheck
     rubocop
+    ;; for Development
+    clojure-mode
+    haskell-mode
+    ac-slime
+    slime
+    web-mode
+    whitespace
     ))
 
 (let
@@ -37,11 +52,3 @@
 (load-theme 'solarized-dark t)
 (evil-mode t)
 (windmove-default-keybindings 'meta)
-
-(require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'emmet-mode-hook 
-	  (lambda () (setq emmet-indentation 2)))
-
-(require 'linum)
-(global-linum-mode)
