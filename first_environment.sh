@@ -12,6 +12,9 @@
 ## Main Editor
 sudo apt-get install -y vim
 
+## Install Git
+sudo apt-get install -y git
+
 ## Python Environment
 sudo pip install -y paramiko PyYAML Jinja2 httplib2
 
